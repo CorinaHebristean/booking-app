@@ -8,6 +8,7 @@
         <th> ID </th>
         <th> Title </th>
         <th> Description </th>
+        <th> Nr. rooms</th>
         <th> Actions </th>
     </tr>
 
@@ -16,6 +17,11 @@
             <td> {{ $accommodation->id }} </td>
             <td> {{ $accommodation->title }} </td>
             <td> {{ $accommodation->description }} </td>
+            <td> {{ $accommodation->rooms->count() }} 
+                @foreach ($accommodation->rooms as $room)
+                    <br> {{ $room->title }}
+                @endforeach
+            </td>
             <td> 
             
             </td>
